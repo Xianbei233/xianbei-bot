@@ -1,36 +1,49 @@
 plugins:
-  # default:
-  #   - rss
-  #   - answer
-  #   - limit
-  #   - forward
-  #   # - dev
-  #   - teach
+  default:
+    #   - rss
+    - answer
+    # - limit
+    # - forward
+    # - dev
+    # - teach
   # official:
   #   - hitokoto
   #   - niubi
-  custom:
-    - ./bot/test
+  # custom:
+  #   - ./bot/test
 
-rss:
-  - name: 云游君的小站
-    url: https://www.yunyoujun.cn/atom.xml
-    # cron: "*/1 * * * *"
-    customFields:
-      item:
-        - updated
-        - summary
-    content:
-      - 标题：${item.title}
-      - 链接：${item.link}
-      - 时间：${item.updated}
-    target:
-      group:
-        # El Psy Congroo
-        - 707408530
+master:
+  - 455482921
+
+admin:
+  - 455482921
+
+# dev:
+#   listen:
+#     - master
+
+# rss:
+#   - name: 云游君的小站
+#     url: https://www.yunyoujun.cn/atom.xml
+#     # cron: "*/1 * * * *"
+#     customFields:
+#       item:
+#         - updated
+#         - summary
+#     content:
+#       - 标题：${item.title}
+#       - 链接：${item.link}
+#       - 时间：${item.updated}
+#     target:
+#       group:
+#         # El Psy Congroo
+#         - 707408530
 
 # 消息应答
 answer:
+  - listen:
+      - master
+      - admin
   - re: 早呀|早上|哦哈呦|起床啦
     reply:
       - type: Plain

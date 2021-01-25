@@ -7,8 +7,8 @@
     "folder": "mcl"
   },
   "scripts": {
-    "bot": "nodemon --exec el bot",
-    "dev": "nodemon --exec el bot",
+    "bot": "nodemon --exec el start bot",
+    "dev": "nodemon --exec el start bot",
     "mirai": "cd mcl/ && ./mcl",
     "start": "el start",
     "start:bot": "el start bot",
