@@ -1,0 +1,31 @@
+{
+  "name": "xianbei-bot",
+  "version": "0.0.1",
+  "description": "a qq bot build by el-bot",
+  "main": "bot/index.js",
+  "mcl": {
+    "folder": "mcl"
+  },
+  "scripts": {
+    "bot": "nodemon --exec el bot",
+    "dev": "nodemon --exec el bot",
+    "mirai": "cd mcl/ && ./mcl",
+    "start": "el start",
+    "start:bot": "el start bot",
+    "start:mirai": "el start mirai",
+    "lint": "eslint --fix . && prettier --write ."
+  },
+  "repository": "https://github.com/Xianbei233/xianbei-bot.git",
+  "author": "xianbei233 <455482921@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "el-bot": "^0.7"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.14.0",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.1.2"
+  }
+}
