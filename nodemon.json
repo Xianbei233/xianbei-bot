@@ -1,3 +1,4 @@
 {
-  "ext": "js,ts,yml,lock"
+  "ignore": [".git/*", "node_modules/*", "tmp"],
+  "ext": "js,ts,yml"
 }

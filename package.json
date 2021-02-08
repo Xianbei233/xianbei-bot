@@ -2,14 +2,18 @@
   "name": "xianbei-bot",
   "version": "0.0.1",
   "description": "a qq bot build by el-bot",
-  "main": "bot/index.js",
+  "main": "./dist/bot/index.js",
   "mcl": {
     "folder": "mcl"
   },
   "scripts": {
-    "bot": "nodemon --exec el start bot",
-    "dev": "nodemon --exec el start bot",
+    "bot": "nodemon --exec yarn start:bot",
+    "dev": "nodemon --exec yarn start:bot",
     "mirai": "cd mcl/ && ./mcl",
+    "build": "yarn build:bot && yarn build:mirai && yarn build:el ",
+    "build:bot": "babel bot  -d dist/bot --copy-files ",
+    "build:mirai": "babel mcl/config  -d dist/mcl/config --copy-files",
+    "build:el": "babel el  -d dist/el --copy-files",
     "start": "el start",
     "start:bot": "el start bot",
     "start:mirai": "el start mirai",
@@ -19,9 +23,12 @@
   "author": "xianbei233 <455482921@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "el-bot": "^0.7"
+    "el-bot": "^0.7.0-alpha.5"
   },
   "devDependencies": {
+    "@babel/cli": "^7.12.13",
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
     "dotenv": "^8.2.0",
     "eslint": "^7.11.0",
     "eslint-config-prettier": "^6.14.0",

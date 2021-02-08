@@ -9,14 +9,15 @@ plugins:
   # official:
   #   - hitokoto
   #   - niubi
-  # custom:
-  #   - ./bot/test
+  custom:
+    - ./bot/plugins/test
 
 master:
   - 455482921
 
 admin:
   - 455482921
+  - 490619230
 
 # dev:
 #   listen:
@@ -38,6 +39,10 @@ admin:
 #       group:
 #         # El Psy Congroo
 #         - 707408530
+
+# test:
+#   - test:
+#       - 123
 
 # 消息应答
 answer:
